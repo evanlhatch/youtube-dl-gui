@@ -1,6 +1,23 @@
 [build-system]
-requires = [
-    "setuptools >= 40.0.4",
-    "wheel >= 0.29.0",
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "youtube-dl-gui"
+version = "0.1.0"
+description = "Your project description"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+pypubsub = "^4.0.3"
+numpy = "^1.21.2"
+wxPython = ">=4.0.7.post2,<=4.2.1"
+pyinstaller = "^5.13.2"
+
+[tool.poetry.dev-dependencies]
+pyinstaller = "^5.13.2"
+
+[build]
+script = "python setup.py pyinstaller"
+
