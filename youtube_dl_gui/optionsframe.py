@@ -1129,3 +1129,19 @@ class ExtraTab(TabPanel):
         ] = self.ignore_config_checkbox.GetValue()
         self.opt_manager.options["native_hls"] = self.native_hls_checkbox.GetValue()
         self.opt_manager.options["nomtime"] = self.no_mtime_checkbox.GetValue()
+
+# New API Key and Workflow ID options
+self.api_key_option = wx.TextCtrl(self, -1, "")
+self.workflow_id_option = wx.TextCtrl(self, -1, "")
+sizer.Add(wx.StaticText(self, -1, "API Key:"), 0, wx.ALL, 5)
+sizer.Add(self.api_key_option, 0, wx.ALL, 5)
+sizer.Add(wx.StaticText(self, -1, "Workflow ID:"), 0, wx.ALL, 5)
+sizer.Add(self.workflow_id_option, 0, wx.ALL, 5)
+
+# New Segment Start and Duration options
+self.segment_start_option = wx.TextCtrl(self, -1, "")
+self.segment_duration_option = wx.TextCtrl(self, -1, "")
+sizer.Add(wx.StaticText(self, -1, "Segment Start (ms):"), 0, wx.ALL, 5)
+sizer.Add(self.segment_start_option, 0, wx.ALL, 5)
+sizer.Add(wx.StaticText(self, -1, "Segment Duration (ms):"), 0, wx.ALL, 5)
+sizer.Add(self.segment_duration_option, 0, wx.ALL, 5)

@@ -1442,3 +1442,27 @@ class MainFrame(wx.Frame):
         self.opt_manager.save_to_file()
 
         self.Destroy()
+
+
+# New API Output Path button
+self.api_output_path_button = wx.Button(self.panel, label="API Output Path")
+self.api_output_path_button.Bind(wx.EVT_BUTTON, self.on_api_output_path)
+
+# New Job Status label
+self.job_status_label = wx.StaticText(self.panel, label="Job Status: N/A")
+
+# Add to Layout Manager
+sizer.Add(self.api_output_path_button, 0, wx.ALL, 5)
+sizer.Add(self.job_status_label, 0, wx.ALL, 5)
+
+# Event Handler
+def on_api_output_path(self, event):
+    dialog = wx.DirDialog(self, "Choose a directory for API output files:")
+    if dialog.ShowModal() == wx.ID_OK:
+        self.api_output_path = dialog.GetPath()
+    dialog.Destroy()
+
+def update_job_status(self, status):
+    self.job_status_label.SetLabel(f"Job Status: {status}")
+
+self.update_job_status("SUCCEEDED")
